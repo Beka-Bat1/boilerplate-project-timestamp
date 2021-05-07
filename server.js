@@ -24,6 +24,7 @@ app.get("/", function (req, res) {
 app.get("/api/:date?", function (req, res) {
   let timeStamp = req.params.date;
   console.log(timeStamp)
+  if(!timeStamp) timeStamp = new Date().getTime() 
   // checking if timeStamp is numbers or 2015-12-15
   timeStamp.length >= 12 ? timeStamp=parseInt(timeStamp) : null ;
 
