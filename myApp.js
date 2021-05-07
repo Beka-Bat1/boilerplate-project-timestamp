@@ -3,11 +3,11 @@ var app = express();
 
 // let absolutePath = __dirname + "/";
 
-// app.use("/", express.static(absolutePath))
+app.use("/", express.static(__dirname + "/"))
 
-
+console.log(new Date(Date.UTC(0)))
 app.get("/api/timestamp", (req, res) => {
-  res.json({ unix: Date.now(), utc: Date() });
+  res.json({ unix: new Date.now(), utc: new Date() });
 });
 
 app.get("/api/timestamp/:date_string", (req, res) => {
